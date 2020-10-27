@@ -9,15 +9,13 @@ const vuetify = new Vuetify({
     dark: false,
     themes: {
       dark: {
-        primary: '#4CAF50',
-        secondary: '#1B5E20',
-        accent: '#9C27B0',
+        primary: '#FF0084',
+        secondary: '#CF006B',
         info: colors.grey.darken4,
       },
       light: {
-        primary: '#4CAF50',
-        secondary: '#1B5E20',
-        accent: '#9C27B0',
+        primary: '#0063DC',
+        secondary: '#004599',
         info: colors.grey.lighten4,
       },
     },

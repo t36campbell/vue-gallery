@@ -23,9 +23,9 @@
         </v-list-item>
         <v-list-item>
           <v-list-item-action>
-            <v-icon color="grey darken-1">mdi-brightness-4</v-icon>
+            <v-icon>mdi-brightness-4</v-icon>
           </v-list-item-action>
-          <v-list-item-title class="grey--text text--darken-1">
+          <v-list-item-title>
             <v-switch
               class="toggle"
               v-model="$vuetify.theme.dark"
@@ -41,15 +41,19 @@
       color="primary"
       dense
     >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon
+        @click.stop="drawer = !drawer"
+        color="secondary darken-4"
+      ></v-app-bar-nav-icon>
       <v-icon
         class="mx-4"
+        color="secondary darken-4"
         large
       >
-        mdi-image
+        mdi-google-photos
       </v-icon>
       <v-toolbar-title class="mr-12 align-center">
-        <span class="title">pkchr</span>
+        <span class="title secondary--text text--darken-4">pkchr</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-row
@@ -63,7 +67,7 @@
           placeholder="Search..."
           single-line
           append-icon="mdi-magnify"
-          color="white"
+          color="secondary darken-4"
           hide-details
         ></v-text-field>
       </v-row>
@@ -79,8 +83,15 @@
           >
             <v-card v-on:click="changeTag(tag._content)">
                 <v-row dense>
-                    <v-col :cols="12">
+                    <v-col :cols="10">
                       <v-card-title v-text="tag._content"></v-card-title>
+                    </v-col>
+                    <v-col :cols="2">
+                      <v-card-subtitle>
+                        <v-btn icon>
+                          <v-icon>mdi-bookmark-plus-outline</v-icon>
+                        </v-btn>
+                      </v-card-subtitle>
                     </v-col>
                   </v-row>
             </v-card>
@@ -102,7 +113,7 @@ export default Vue.extend({
   name: 'App',
   components: {},
   data: () => ({
-    drawer: null,
+    drawer: true,
     isDefault: true,
     items: [],
     tags: [],
@@ -113,14 +124,17 @@ export default Vue.extend({
     this.defaultTag();
     this.items = [
       {
-        icon: 'mdi-trending-up', text: 'Home', path: `/search/${this.tag}`, isHome: true,
+        icon: 'mdi-google-photos', text: 'Home', path: `/search/${this.tag}`, isHome: true,
       },
       {
-        icon: 'mdi-youtube-subscription', text: 'Stores', path: '/stores', isHome: false,
+        icon: 'mdi-image-multiple', text: 'My Photos', path: '/photos', isHome: false,
       },
-      { icon: 'mdi-image-multiple', text: 'Tags', path: '' },
-      { icon: 'mdi-store', text: 'Products', path: '' },
-      { icon: 'mdi-cog', text: 'Settings', path: '' },
+      {
+        icon: 'mdi-tag-multiple', text: 'My Tags', path: '/tags', isHome: false,
+      },
+      {
+        icon: 'mdi-card-account-details', text: 'My Account', path: '/account', isHome: false,
+      },
     ];
   },
   methods: {

@@ -26,7 +26,7 @@
                         icon
                         color="white"
                       >
-                        <v-icon>mdi-heart</v-icon>
+                        <v-icon>mdi-plus-box-multiple</v-icon>
                       </v-btn>
                     </v-card-subtitle>
                   </v-col>
@@ -61,7 +61,7 @@
                         icon
                         color="white"
                       >
-                        <v-icon>mdi-heart</v-icon>
+                        <v-icon>mdi-plus-box-multiple</v-icon>
                       </v-btn>
                     </v-card-subtitle>
                   </v-col>

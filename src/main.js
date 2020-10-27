@@ -1,12 +1,10 @@
 import Vue from 'vue';
-import * as VueGoogleMaps from 'vue2-google-maps';
 import * as firebase from 'firebase/app';
 import 'firebase/analytics';
 import App from './App.vue';
 import './registerServiceWorker';
 import router from './router';
 import vuetify from './plugins/vuetify';
-import vgmAPIKey from './vgm-config';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCkClSsMigJ-0Jn0Ny3LwNWmQRtiHOZyLY',
@@ -21,12 +19,6 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 Vue.config.productionTip = false;
-Vue.use(VueGoogleMaps, {
-  load: {
-    key: vgmAPIKey,
-    libraries: ['places', 'geometry'],
-  },
-});
 
 new Vue({
   router,

@@ -5,7 +5,7 @@
       :indeterminate="loading"
       absolute
       top
-      color="primary"
+      color="secondary darken-4"
     ></v-progress-linear>
     <Photos :tag='tag' :hasCards='hasCards' :cards='cards'/>
   </div>
