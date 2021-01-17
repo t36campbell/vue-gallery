@@ -51,7 +51,7 @@ export default {
     getImages() {
       return axios({
         method: 'get',
-        url: 'https://api.flickr.com/services/rest',
+        url: 'https://tsc-cors.herokuapp.com/https://api.flickr.com/services/rest',
         params: {
           method: 'flickr.photos.search',
           api_key: flickrAPIKey,
