@@ -1,5 +1,5 @@
 # build stage
-FROM node:latest as build-stage
+FROM node:lts-fermium as build-stage
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
